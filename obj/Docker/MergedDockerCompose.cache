@@ -1,8 +1,17 @@
 services:
-  blacksoil.blazor.server:
+  blacksoil.aspnet:
     build:
       context: F:\GitRepos\BlackSoil
-      dockerfile: BlackSoil.Blazor.Server/Dockerfile
+      dockerfile: BlackSoil.AspNet/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: blacksoilaspnet
+    ports:
+    - target: 80
+  blacksoil.blazor.server:
+    build:
+      context: F:\GitRepos\BlackSoil\BlackSoil.Blazor.Server
+      dockerfile: Dockerfile
     environment:
       ASPNETCORE_ENVIRONMENT: Development
     image: blacksoilblazorserver

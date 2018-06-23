@@ -10,3 +10,6 @@
 /BlackSoil.Blazor.Shared/bin/Debug/netstandard2.0
 /BlackSoil.Blazor.Shared/obj
 /.vs
+/obj/Debug
+/BlackSoil.AspNet/bin/Debug/netcoreapp2.1
+/BlackSoil.AspNet/obj

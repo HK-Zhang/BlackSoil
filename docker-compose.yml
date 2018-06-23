@@ -2,7 +2,14 @@ version: '3.4'
 
 services:
   blacksoil.blazor.server:
-    image: ${DOCKER_REGISTRY}blacksoilblazorserver
+    image: blacksoilblazorserver
+    build:
+      context: ./BlackSoil.Blazor.Server
+      dockerfile: Dockerfile
+
+  blacksoil.aspnet:
+    image: ${DOCKER_REGISTRY}blacksoilaspnet
     build:
       context: .
-      dockerfile: BlackSoil.Blazor.Server/Dockerfile
+      dockerfile: BlackSoil.AspNet/Dockerfile
+
