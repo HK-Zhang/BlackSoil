@@ -6,10 +6,3 @@ services:
     build:
       context: ./BlackSoil.Blazor.Server
       dockerfile: Dockerfile
-
-  blacksoil.aspnet:
-    image: ${DOCKER_REGISTRY}blacksoilaspnet
-    build:
-      context: .
-      dockerfile: BlackSoil.AspNet/Dockerfile
-

@@ -2,14 +2,15 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/.vs/BlackSoil.Blazor/v15
-/BlackSoil.Blazor.Client/bin/Debug/netstandard2.0
-/BlackSoil.Blazor.Client/obj
-/BlackSoil.Blazor.Server/bin/Debug/netcoreapp2.1
-/BlackSoil.Blazor.Server/obj
-/BlackSoil.Blazor.Shared/bin/Debug/netstandard2.0
-/BlackSoil.Blazor.Shared/obj
+/.vs/**
+/BlackSoil.Blazor.Client/bin/**
+/BlackSoil.Blazor.Client/obj/**
+/BlackSoil.Blazor.Server/bin/**
+/BlackSoil.Blazor.Server/obj/**
+/BlackSoil.Blazor.Shared/bin/**
+/BlackSoil.Blazor.Shared/obj/**
 /.vs
 /obj/Debug
-/BlackSoil.AspNet/bin/Debug/netcoreapp2.1
-/BlackSoil.AspNet/obj
+/BlackSoil.AspNet/bin/**
+/BlackSoil.AspNet/obj/**
+/obj/**

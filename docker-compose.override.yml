@@ -7,9 +7,3 @@ services:
     ports:
       - "80"
 
-  blacksoil.aspnet:
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    ports:
-      - "80"
-
