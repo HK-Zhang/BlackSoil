@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  blacksoil.blazor.server:
+    image: blacksoilblazorserver
+    build:
+      context: ./BlackSoil.Blazor.Server
+      dockerfile: Dockerfile

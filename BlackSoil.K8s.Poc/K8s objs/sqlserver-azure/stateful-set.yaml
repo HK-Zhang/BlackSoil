@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: sqlserverstatefulset
+spec:
+  serviceName: sqlservice
+  selector:
+    matchLabels:
+      app: sqlinux 
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sqlinux
+    spec:
+      containers:
+        - name: sqlinux
+          image: microsoft/mssql-server-linux
+          env:
+            - name: SA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sqlsecret
+                  key: sapassword
+            - name: ACCEPT_EULA
+              value: "Y"
+          ports:
+            - containerPort: 1433
+          volumeMounts:
+            - mountPath: /var/opt
+              name: sqldb-home
+      volumes:
+      - name: sqldb-home
+        persistentVolumeClaim:
+          claimName: sqldb-pv
