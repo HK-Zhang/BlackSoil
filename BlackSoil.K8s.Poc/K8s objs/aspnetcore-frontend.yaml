@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: aspnetcoreapp
-        image: maksh/aspnetcorekuberappimg
+        image: yxzhk/aspnetcoreapp
         ports:
         - containerPort: 5000
         resources:
