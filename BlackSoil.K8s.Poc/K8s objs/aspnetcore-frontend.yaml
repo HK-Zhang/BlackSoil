@@ -5,6 +5,9 @@ metadata:
   name: aspnetcoreapp-deployment
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: aspnetcoreapp
   template:
     metadata:
       labels:
@@ -12,7 +15,7 @@ spec:
     spec:
       containers:
       - name: aspnetcoreapp
-        image: maksh/aspnetcorekuberappimg
+        image: yxzhk/aspnetcoreapp
         ports:
         - containerPort: 5000
         resources:
