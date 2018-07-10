@@ -26,11 +26,13 @@ spec:
               value: "Y"
           ports:
             - containerPort: 1433
-      #     volumeMounts:
-      #       - mountPath: /var/opt
-      #         name: sqldb-home
-      # volumes:
-      # - name: sqldb-home
-      #   hostPath:
-      #     path: /data/mssql
-      #     # type: Directory
+          volumeMounts:
+            - mountPath: /var/opt/mssql
+              name: sqldb-home
+      volumes:
+      - name: sqldb-home
+        persistentVolumeClaim:
+         claimName: sqldb-pv
+        # hostPath:
+        #   path: /data/mssql
+          # type: Directory
