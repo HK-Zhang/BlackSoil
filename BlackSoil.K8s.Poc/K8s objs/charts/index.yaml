@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  redhelm:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-07-14T19:54:57.1199429+08:00
+    description: A Sqlserver and Asp.net MVC application
+    digest: 9c8df2f80d77356ba2ff65a03e0f50c44fd971e7f864cc551054f3400898ee10
+    name: redhelm
+    urls:
+    - https://hk-zhang.github.io/BlackSoil/charts/redhelm-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-07-14T19:54:57.1199429+08:00
