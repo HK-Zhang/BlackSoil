@@ -3,10 +3,10 @@ kind: PersistentVolumeClaim
 metadata:
   name: "sqldb-pv"
   annotations:
-    volume.beta.kubernetes.io/storage-class: "localstorageclass"
+    volume.beta.kubernetes.io/storage-class: "azurestorageclass"
 spec:
   accessModes:
     - "ReadWriteOnce"
   resources:
     requests:
-      storage: "4Gi"
+      storage: "10Gi"
