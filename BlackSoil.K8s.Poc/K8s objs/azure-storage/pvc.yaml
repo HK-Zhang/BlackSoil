@@ -1,12 +1,12 @@
-apiVersion: v1
 kind: PersistentVolumeClaim
+apiVersion: v1
 metadata:
-  name: "sqldb-pv"
+  name: sqldb-pv
   annotations:
-    volume.beta.kubernetes.io/storage-class: "azurestorageclass"
+    volume.beta.kubernetes.io/storage-class: azure-disk
 spec:
   accessModes:
-    - "ReadWriteOnce"
+  - ReadWriteOnce
   resources:
     requests:
-      storage: "10Gi"
+      storage: 8Gi
