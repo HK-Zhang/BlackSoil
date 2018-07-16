@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: sqlinux
-          image: microsoft/mssql-server-linux
+          image: microsoft/mssql-server-linux:2017-latest
           env:
             - name: SA_PASSWORD
               valueFrom:

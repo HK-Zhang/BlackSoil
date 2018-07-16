@@ -1,9 +1,8 @@
 kind: StorageClass
-apiVersion: storage.k8s.io/v1
+apiVersion: storage.k8s.io/v1beta1
 metadata:
-  name: azurestorageclass
+     name: azure-disk
 provisioner: kubernetes.io/azure-disk
 parameters:
-  skuName: Standard_LRS
-  location: westeurope
-  storageAccount: yxzhksqldb
+  storageaccounttype: Standard_LRS
+  kind: Managed
