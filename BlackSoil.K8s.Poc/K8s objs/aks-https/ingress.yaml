@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - yxzhk-aks-ingress.eastus.cloudapp.azure.com
+    - yxzhk-aks-ingress.westeurope.cloudapp.azure.com
     secretName: tls-secret
   rules:
-  - host: yxzhk-aks-ingress.eastus.cloudapp.azure.com
+  - host: yxzhk-aks-ingress.westeurope.cloudapp.azure.com
     http:
       paths:
       - path: /
