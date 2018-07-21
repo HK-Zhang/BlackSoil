@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oauth2-proxy-emails-configmap
+data:
+  oauth2_emails.cfg: |
+    he.ke.henry.zhang@dnvgl.com
+    admyxzhk@dnv.onmicrosoft.com
