@@ -1,0 +1,45 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: acs-helloworld-aks-helloworld
+  labels:
+    app: acs-helloworld-aks-helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acs-helloworld-aks-helloworld
+  template:
+    metadata:
+      labels:
+        app: acs-helloworld-aks-helloworld
+    spec:
+      containers:
+      - name: oauth2-proxy
+        image: mseoss/oauth2_proxy:v2.2
+        imagePullPolicy: Always
+        args:
+        - "--config=/config/oauth2_proxy.cfg"
+        ports:
+        - containerPort: 4180
+          name: http
+          protocol: TCP
+        volumeMounts:
+        - name: oauth2-proxy-secret
+          mountPath: /config
+        - name: oauth2-proxy-emails-config
+          mountPath: /authorization
+      - name: acs-helloworld-aks-helloworld
+        image: yxzhk/aspnetcoreapp
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+          name: web
+          protocol: TCP
+      volumes:
+        - name: oauth2-proxy-secret
+          secret:
+            secretName: oauth2-proxy-secret
+        - name: oauth2-proxy-emails-config
+          configMap:
+            name: oauth2-proxy-emails-configmap
