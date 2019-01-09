@@ -76,6 +76,12 @@ def start():
   container_name = os.environ['CONTAINERNAME']
   sas_token = os.environ['SASTOKEN']
   folder_name = os.environ['FOLDERNAME']
+  ex = os.environ['EXCEPTION']
+  
+  if ex == "True":
+    raise ValueError('oops!')
+    os._exit(0)
+
   if account_name != None and container_name != None and sas_token != None and folder_name != None:
     run(account_name, container_name, sas_token, folder_name)
 
